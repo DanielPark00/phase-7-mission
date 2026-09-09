@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 7 Mission</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        
+        .card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 48px 32px;
+            text-align: center;
+        }
+        
+        .hero-icon {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .content {
+            padding: 40px 32px;
+        }
+        
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-box {
+            padding: 24px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+            border-left: 4px solid #1976d2;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1565c0;
+            margin-bottom: 8px;
+        }
+        
+        .stat-text {
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 16px;
+        }
+        
+        .vocab-table {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .vocab-row {
+            display: grid;
+            grid-template-columns: 100px 140px 120px 1fr;
+            gap: 12px;
+            padding: 14px;
+            background: #fafafa;
+            border-left: 4px solid #1976d2;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        
+        .vocab-word {
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .vocab-phonetic {
+            color: #666;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .vocab-french {
+            color: #333;
+        }
+        
+        .vocab-nuance {
+            color: #888;
+            font-size: 12px;
+        }
+        
+        .config-box {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        
+        .config-item {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 16px;
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+            align-items: start;
+        }
+        
+        .config-item:last-child {
+            border-bottom: none;
+        }
+        
+        .config-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+        
+        .config-value {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .brief-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            color: #333;
+            line-height: 1.7;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        
+        .footer {
+            padding: 24px 32px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hero">
+            <div class="hero-icon">🚀</div>
+            <h1>Phase 7 Mission</h1>
+            <p>Weekly Italian vocabulary automation—generated, reviewed, ready for Anki</p>
+        </div>
+        
+        <div class="content">
+            <div class="badges">
+                <span class="badge">✓ Automated</span>
+                <span class="badge">⏰ Weekly</span>
+                <span class="badge">🔒 Gated</span>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">60 min</div>
+                    <div class="stat-text">recovered per month</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-text">hands-off</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Sample Output — Emotions Week 1</div>
+                <div class="vocab-table">
+                    <div class="vocab-row">
+                        <div class="vocab-word">noia</div>
+                        <div class="vocab-phonetic">/'nɔ.ja/</div>
+                        <div class="vocab-french">ennui</div>
+                        <div class="vocab-nuance">Boredom with existential undertone</div>
+                    </div>
+                    <div class="vocab-row">
+                        <div class="vocab-word">trepidazione</div>
+                        <div class="vocab-phonetic">/tre.pi.da'tsjɔ.ne/</div>
+                        <div class="vocab-french">anticipation anxieuse</div>
+                        <div class="vocab-nuance">Eager dread mixed with hope</div>
+                    </div>
+                    <div class="vocab-row">
+                        <div class="vocab-word">smania</div>
+                        <div class="vocab-phonetic">/'zma.nja/</div>
+                        <div class="vocab-french">agitation</div>
+                        <div class="vocab-nuance">Restless urge, unstoppable desire</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">How It Works</div>
+                <div class="config-box">
+                    <div class="config-item">
+                        <div class="config-label">Trigger</div>
+                        <div class="config-value">Every Monday at 8:00 AM (Paris)</div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-label">Input</div>
+                        <div class="config-value">Claude generates 30 words, IPA phonetics precise, avoids French cognates</div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-label">Gate</div>
+                        <div class="config-value">Markdown draft — you review, then approve adding to Anki</div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-label">Status</div>
+                        <div class="config-value">Active — next run: Monday Sept 14, 2026</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">The Brief (Copy & Adapt)</div>
+                <div class="brief-box">**Scope:** Italian vocabulary lists 
+on theme [THEME] — 30 words.
+
+**Steps:**
+1. Identify 30 key words
+2. Italian + IPA (precise) + French 
+3. Organize by category
+4. Markdown format
+
+**Guardrails:**
+- Exact IPA phonetics
+- Avoid French cognates  
+- Nuances + false friends
+- Contextualized examples
+
+**Report:** Markdown draft for 
+Anki — no auto-add.</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <a href="https://claude.ai/code/routines/trig_019Xvd1ieKqTWZMd85aD3rYv" target="_blank">Manage automation →</a>
+        </div>
+    </div>
+</body>
+</html>
